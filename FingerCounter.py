@@ -79,7 +79,11 @@ while True:
 
     cv2.putText(img,f'FPS:{int(fps)}',(10,450),cv2.FONT_HERSHEY_PLAIN,2,(255,255,255),2)
     cv2.imshow("Finger Counter", img)
-    cv2.waitKey(1)
+    if cv2.waitKey(1) & 0xff == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
 
 
 
